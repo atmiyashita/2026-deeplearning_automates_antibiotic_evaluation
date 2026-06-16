@@ -1,0 +1,4 @@
+PyQt6
+opencv-python
+picamera2
+# dbus-python may be needed depending on Raspberry Pi OS setup

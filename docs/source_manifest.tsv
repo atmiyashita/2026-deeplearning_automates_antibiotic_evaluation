@@ -1,0 +1,5 @@
+out_path	source_origin	note
+detection/train_kaiko_fasterrcnn_2025_0219.py	repo_root/codes/Kaiko-faster-R-CNN-2025-0219.py	2025-0219 PAO1 model training script (paths placeholderized)
+detection/infer_kaiko_fasterrcnn_public.py	repo_root/codes/Kaiko-faster-R-CNN-infer-2025-0220.py	public inference script (paths placeholderized)
+acquisition/app_qt_v2.py	third_party_repo: miyauchi1224824/automated_observation_and_detection	image/video capture GUI for Raspberry Pi camera system
+docs/THIRD_PARTY_NOTICE.md	manual_note	source/attribution note for acquisition script
