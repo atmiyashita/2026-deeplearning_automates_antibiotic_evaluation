@@ -5,3 +5,5 @@ acquisition/app_qt_v2.py	third_party_repo: miyauchi1224824/automated_observation
 docs/THIRD_PARTY_NOTICE.md	manual_note	source/attribution note for acquisition script
 analysis/pava_survival_plot_public.py	repo_root/public_clean_script	public PAVA post-processing and survival-curve plotting script
 analysis/requirements.txt	repo_root/public_clean_script	minimum dependencies for public analysis script
+analysis/km_greenwood_logrank_public.py	repo_root/public_clean_script	public Greenwood CI survival plotting and log-rank test script
+analysis/runlevel_fluctuation_summary_public.py	repo_root/public_clean_script	public run-level raw survival fluctuation summary script

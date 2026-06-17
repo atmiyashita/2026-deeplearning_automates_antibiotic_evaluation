@@ -13,6 +13,8 @@ This bundle is prepared for publishing to Miyashita lab GitHub.
   - `requirements.txt`
 - `analysis/`
   - `pava_survival_plot_public.py` (PAVA-based monotonic post-processing and survival-curve plotting from CSV input)
+  - `km_greenwood_logrank_public.py` (Greenwood 95% CI survival plotting and pairwise log-rank tests)
+  - `runlevel_fluctuation_summary_public.py` (run-level raw survival fluctuation summary with mean ± SD)
   - `requirements.txt`
 - `docs/source_manifest.tsv`
   - Mapping from bundled files to original source paths.
@@ -38,6 +40,21 @@ python pava_survival_plot_public.py \
   --time-col elapsed_hours \
   --survival-cols PAO1,PAO1_meropenem,saline \
   --output-dir outputs/survival_plot
+
+# 4) Greenwood 95% CI とlog-rank検定付きの生存曲線
+python km_greenwood_logrank_public.py \
+  --input-csv survival_input.csv \
+  --time-col elapsed_hours \
+  --survival-cols PAO1,PAO1_meropenem,saline \
+  --n-total 30 \
+  --output-dir outputs/km_plot
+
+# 5) 2つ以上の独立run間のRAW曲線ゆらぎを集計
+python runlevel_fluctuation_summary_public.py \
+  --run-csvs run1.csv,run2.csv \
+  --run-labels batch1,batch2 \
+  --survival-cols PAO1,PAO1_meropenem,saline \
+  --output-dir outputs/fluctuation_summary
 ```
 
 ## Notes
