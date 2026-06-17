@@ -11,6 +11,9 @@ This bundle is prepared for publishing to Miyashita lab GitHub.
 - `acquisition/`
   - `app_qt_v2.py` (Raspberry Pi camera capture/recording GUI)
   - `requirements.txt`
+- `analysis/`
+  - `pava_survival_plot_public.py` (PAVA-based monotonic post-processing and survival-curve plotting from CSV input)
+  - `requirements.txt`
 - `docs/source_manifest.tsv`
   - Mapping from bundled files to original source paths.
 
@@ -26,12 +29,20 @@ python train_kaiko_fasterrcnn_2025_0219.py
 # 2) infer_kaiko_fasterrcnn_public.py の
 #    checkpoint_path / image_folder を実パスに置換
 python infer_kaiko_fasterrcnn_public.py
+
+# 3) PAVA補正と生存曲線描画
+cd ../analysis
+pip install -r requirements.txt
+python pava_survival_plot_public.py \
+  --input-csv survival_input.csv \
+  --time-col elapsed_hours \
+  --survival-cols PAO1,PAO1_meropenem,saline \
+  --output-dir outputs/survival_plot
 ```
 
 ## Notes
 
 - Datasets, model weights, and output files are **not** included in this bundle.
-- Model weights (`.pth`) are intentionally not included for IP protection.
 - `acquisition/app_qt_v2.py` is intended for Raspberry Pi environments with camera modules.
 - `acquisition/app_qt_v2.py` was copied from:
   `https://github.com/miyauchi1224824/automated_observation_and_detection` (retrieved on 2026-06-16).
